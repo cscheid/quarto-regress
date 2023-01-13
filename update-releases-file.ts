@@ -23,6 +23,7 @@ const octokit = new Octokit({
   }
 });
 
+console.log("Fetching releases...");
 const releases = await octokit.paginate("GET /repos/{owner}/{repo}/releases", {
   owner: "quarto-dev",
   repo: "quarto-cli",

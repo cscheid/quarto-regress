@@ -37,6 +37,14 @@ for (const obj of releases) {
     Deno.removeSync(`releases/${tag_name}.tar.gz`);
 }
 
+if (!(await Deno.run({ cmd: ["which", "fdupes"] }).status()).success) {
+    console.log("fdupes not found, skipping");
+} else {
+    console.log("Starting duplicate removal");
+    await Deno.run({ cmd: ["fdupes", "--recurse", "releases", "-H", "-m"] }).status();
+    console.log(`Removed duplicates`);
+}
+
 try {
     Deno.removeSync("releases/latest");    
 } catch {};
