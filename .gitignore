@@ -6,3 +6,5 @@
 /secrets
 /releases
 /logs
+.DS_Store
+.Rprofile
