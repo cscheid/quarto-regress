@@ -1,0 +1,9 @@
+---
+title: What to do
+---
+
+## Updating set of releases
+
+```sh
+bin/update.sh
+```

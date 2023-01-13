@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+/.luarc.json
+/secrets
+/releases
+/logs
