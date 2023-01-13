@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "debug.javascript.unmapMissingSources": true,
+    "julia.format.indent": 2,
+    "julia.format.indents": false,
+    "deno.lint": true,
+    "deno.enable": true,
+    "deno.unstable": true,
+    "quarto.path": "./package/dist/bin/quarto",
+    "files.associations": {
+      "*.ejs.md": "ejs",
+      "*.ejs.yml": "ejs",
+      "*.ejs.html": "ejs",
+      "*.ejs.js": "ejs"
+    },
+    "[ejs]": {
+      "editor.formatOnSave": false
+    }
+  }
+}
