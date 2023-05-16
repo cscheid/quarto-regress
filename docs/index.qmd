@@ -2,8 +2,44 @@
 title: What to do
 ---
 
+## Dependencies
+
+- deno
+- [fdupes](https://github.com/adrianlopezroche/fdupes)
+- Obtain a [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) and place its contents in `secrets/github-pat.txt`
+
+
 ## Updating set of releases
 
 ```sh
 bin/update.sh
 ```
+
+The quarto releases are placed in `releases/v...`, so `releases/v1.4.68/bin/quarto` will run Quarto 1.4.68.
+
+The `releases` folder is deduplicated using `fdupes`, and so you can store a relatively large number of versions with relatively little storage space. 
+I have ~400 quarto versions on my laptop and it takes a total of 22GB (as opposed to 273GB or so it would take if they were not de-duped).
+
+## Using
+
+I set up a bash script `qv` and place it in my path. In my specific case, that's:
+
+```sh
+#!/bin/bash
+
+version=$1
+shift
+
+~/repos/github/cscheid/quarto-regress/releases/v${version}/bin/quarto $*
+```
+
+From there, you can, for example,
+
+```sh
+
+qv 1.4.68 render file.qmd
+```
+
+If you want to download releases older than 1.4, edit `fetch-releases.ts` around lines 24-28.
+
+
