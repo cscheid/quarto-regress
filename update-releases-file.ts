@@ -1,5 +1,5 @@
-import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
-import { basename } from "https://deno.land/std@0.164.0/path/mod.ts";
+import { Octokit } from "npm:octokit";
+import { basename } from "https://deno.land/std@0.213.0/path/mod.ts";
 
 const octokit = new Octokit({
 

@@ -1,5 +1,5 @@
-import { expandGlobSync } from "https://deno.land/std@0.164.0/fs/mod.ts";
-import { join, resolve } from "https://deno.land/std@0.164.0/path/mod.ts";
+import { expandGlobSync } from "https://deno.land/std@0.213.0/fs/mod.ts";
+import { join, resolve } from "https://deno.land/std@0.213.0/path/mod.ts";
 
 function versionLess(v1: number[], v2: number[]) {
     for (let i = 0; i < 3; i++) {
